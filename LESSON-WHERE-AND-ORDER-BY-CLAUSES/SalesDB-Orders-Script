@@ -1,0 +1,53 @@
+-- STEP 1: CREATE SALES DATABASE
+
+CREATE DATABASE SalesDB;
+GO
+
+-- STEP 2: SELECT THE DATABASE
+
+USE SalesDB;
+GO
+
+-- STEP 3: CREATE ORDERS TABLE
+
+CREATE TABLE Orders
+(
+    OrderID INT PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    FirstName VARCHAR(30),
+    ProductName VARCHAR(50),
+    Quantity INT,
+    UnitPrice DECIMAL(10,2),
+    TotalAmount DECIMAL(10,2),
+    OrderDate DATE,
+    OrderStatus VARCHAR(20),
+    PaymentMethod VARCHAR(30),
+    DeliveryDate DATE NULL
+);
+GO
+
+-- STEP 4: INSERT SAMPLE RECORDS
+
+
+INSERT INTO Orders
+VALUES
+(1001, 'Alice Johnson', 'Alice', 'Laptop', 2, 750.00, 1500.00, '2026-01-05', 'Delivered', 'Credit Card', '2026-01-09'),
+
+(1002, 'Brian Smith', 'Brian', 'Smartphone', 1, 600.00, 600.00, '2026-01-08', 'Pending', 'PayPal', NULL),
+
+(1003, 'Angela Brown', 'Angela', 'Office Chair', 4, 120.00, 480.00, '2026-01-10', 'Delivered', 'Bank Transfer', '2026-01-14'),
+
+(1004, 'Daniel Wilson', 'Daniel', 'Monitor', 2, 250.00, 500.00, '2026-01-12', 'Processing', 'Credit Card', NULL),
+
+(1005, 'Amanda Davis', 'Amanda', 'Keyboard', 5, 40.00, 200.00, '2026-01-15', 'Cancelled', 'PayPal', NULL),
+
+(1006, 'Carlos Garcia', 'Carlos', 'Printer', 1, 350.00, 350.00, '2026-01-18', 'Delivered', 'Bank Transfer', '2026-01-22'),
+
+(1007, 'Sarah Miller', 'Sarah', 'Tablet', 3, 300.00, 900.00, '2026-01-20', 'Pending', 'Credit Card', NULL),
+
+(1008, 'Andrew Taylor', 'Andrew', 'Headphones', 2, 80.00, 160.00, '2026-01-22', 'Delivered', 'PayPal', '2026-01-25'),
+
+(1009, 'Jane Anderson', 'Jane', 'Office Desk', 1, 450.00, 450.00, '2026-01-25', 'Processing', 'Bank Transfer', NULL),
+
+(1010, 'Michael Clark', 'Michael', 'Mouse', 6, 25.00, 150.00, '2026-01-28', 'Delivered', NULL, '2026-02-01');
+GO
