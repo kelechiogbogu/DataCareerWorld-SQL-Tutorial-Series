@@ -1,18 +1,20 @@
---CREATE DATABASE
+
+-- CREATE DATABASE
 CREATE DATABASE [CarSalesDB];
 GO
 
+-- SELECT DATABASE
 USE [CarSalesDB];
 GO
 
-
---CREATE TABLE
+-- CREATE TABLE
 CREATE TABLE CarSales (
-    SaleID INT PRIMARY KEY,
+    SaleID VARCHAR(10) PRIMARY KEY,
+    ProductID VARCHAR(10) NOT NULL,
     SaleDate DATE,
     Brand VARCHAR(50),
     Model VARCHAR(50),
-    Salesperson VARCHAR(50),
+    Salesperson VARCHAR(50) NULL,
     Region VARCHAR(50),
     QuantitySold INT,
     SellingPrice DECIMAL(12,2),
@@ -20,37 +22,54 @@ CREATE TABLE CarSales (
 );
 GO
 
---INSERT RECORDS
-INSERT INTO CarSales
-(SaleID, SaleDate, Brand, Model, Salesperson, Region, QuantitySold, SellingPrice, PurchasePrice)
+-- INSERT SALES RECORDS
+INSERT INTO CarSales (
+    SaleID,
+    ProductID,
+    SaleDate,
+    Brand,
+    Model,
+    Salesperson,
+    Region,
+    QuantitySold,
+    SellingPrice,
+    PurchasePrice
+)
 VALUES
-(1, '2025-01-05', 'Toyota', 'Camry', 'John', 'North', 2, 28000, 22000),
-(2, '2025-01-08', 'BMW', 'X5', 'Sarah', 'South', 1, 65000, 52000),
-(3, '2025-01-10', 'Mercedes', 'C-Class', 'David', 'East', 2, 48000, 39000),
-(4, '2025-01-12', 'Toyota', 'Corolla', 'John', 'North', 3, 22000, 17000),
-(5, '2025-01-15', 'Honda', 'Civic', 'Mary', 'West', 2, 25000, 19500),
-(6, '2025-01-18', 'BMW', '3 Series', 'Sarah', 'South', 2, 45000, 36000),
-(7, '2025-01-20', 'Mercedes', 'GLC', 'David', 'East', 1, 58000, 47000),
-(8, '2025-01-22', 'Toyota', 'RAV4', 'Peter', 'West', 2, 32000, 25500),
-(9, '2025-01-25', 'Honda', 'Accord', 'Mary', 'West', 3, 30000, 23500),
-(10, '2025-01-28', 'BMW', 'X3', 'Sarah', 'South', 1, 52000, 42000),
-(11, '2025-02-02', 'Toyota', 'Camry', 'John', 'North', 1, 28500, 22500),
-(12, '2025-02-05', 'Mercedes', 'E-Class', 'David', 'East', 2, 62000, 50000),
-(13, '2025-02-08', 'Honda', 'CR-V', 'Mary', 'West', 2, 35000, 27500),
-(14, '2025-02-11', 'BMW', '5 Series', 'Sarah', 'South', 1, 60000, 48000),
-(15, '2025-02-14', 'Toyota', 'Corolla', 'Peter', 'West', 2, 23000, 18000),
-(16, '2025-02-17', 'Mercedes', 'C-Class', 'David', 'East', 1, 49000, 40000),
-(17, '2025-02-20', 'Honda', 'Civic', 'Mary', 'West', 3, 25500, 20000),
-(18, '2025-02-23', 'BMW', 'X5', 'Sarah', 'South', 2, 68000, 54000),
-(19, '2025-02-25', 'Toyota', 'RAV4', 'John', 'North', 1, 33000, 26000),
-(20, '2025-02-28', 'Mercedes', 'GLC', 'David', 'East', 2, 59000, 47500),
-(21, '2025-03-03', 'Honda', 'Accord', 'Mary', 'West', 1, 31000, 24000),
-(22, '2025-03-06', 'BMW', '3 Series', 'Sarah', 'South', 3, 46000, 37000),
-(23, '2025-03-09', 'Toyota', 'Camry', 'Peter', 'West', 2, 29000, 23000),
-(24, '2025-03-12', 'Mercedes', 'E-Class', 'David', 'East', 1, 64000, 51000),
-(25, '2025-03-15', 'Honda', 'CR-V', 'Mary', 'West', 2, 36000, 28000),
-(26, '2025-03-18', 'BMW', 'X3', 'Sarah', 'South', 2, 53000, 42500),
-(27, '2025-03-21', 'Toyota', 'Corolla', 'John', 'North', 1, 22500, 17500),
-(28, '2025-03-24', 'Mercedes', 'C-Class', 'David', 'East', 3, 50000, 40500),
-(29, '2025-03-27', 'Honda', 'Civic', 'Mary', 'West', 2, 26000, 20500),
-(30, '2025-03-30', 'BMW', 'X5', 'Sarah', 'South', 1, 67000, 53500);
+('CS001', 'PRD001', '2025-01-05', 'Toyota', 'Corolla', 'John', 'North', 2, 25000, 21000),
+('CS002', 'PRD002', '2025-01-07', 'BMW', 'X5', 'Sarah', 'South', 1, 65000, 57000),
+('CS003', 'PRD003', '2025-01-09', 'Mercedes', 'C-Class', 'David', 'East', 2, 48000, 42000),
+('CS004', 'PRD004', '2025-01-12', 'Toyota', 'Camry', 'Mary', 'West', 3, 32000, 27500),
+('CS005', 'PRD005', '2025-01-15', 'BMW', '3 Series', 'John', 'North', 1, 45000, 39000),
+('CS006', 'PRD006', '2025-01-18', 'Honda', 'Civic', 'Sarah', 'South', 2, 27000, 23000),
+('CS007', 'PRD007', '2025-01-20', 'Mercedes', 'GLC', 'David', 'East', 1, 58000, 51000),
+('CS008', 'PRD008', '2025-01-22', 'Toyota', 'RAV4', 'Mary', 'West', 2, 35000, 30000),
+('CS009', 'PRD009', '2025-01-25', 'BMW', 'X3', 'John', 'North', 2, 52000, 46000),
+('CS010', 'PRD010', '2025-01-28', 'Honda', 'Accord', 'Sarah', 'South', 1, 33000, 28500),
+
+('CS011', 'PRD001', '2025-02-02', 'Toyota', 'Corolla', 'David', 'East', 3, 25000, 21000),
+('CS012', 'PRD002', '2025-02-05', 'BMW', 'X5', 'Mary', 'West', 1, 65000, 57000),
+('CS013', 'PRD003', '2025-02-08', 'Mercedes', 'C-Class', 'John', 'North', 2, 48000, 42000),
+('CS014', 'PRD006', '2025-02-10', 'Honda', 'Civic', 'Sarah', 'South', 3, 27000, 23000),
+('CS015', 'PRD004', '2025-02-13', 'Toyota', 'Camry', 'David', 'East', 1, 32000, 27500),
+('CS016', 'PRD005', '2025-02-16', 'BMW', '3 Series', 'Mary', 'West', 2, 45000, 39000),
+('CS017', 'PRD007', '2025-02-19', 'Mercedes', 'GLC', 'John', 'North', 1, 58000, 51000),
+('CS018', 'PRD010', '2025-02-22', 'Honda', 'Accord', 'Sarah', 'South', 2, 33000, 28500),
+('CS019', 'PRD008', '2025-02-25', 'Toyota', 'RAV4', 'David', 'East', 2, 35000, 30000),
+('CS020', 'PRD009', '2025-02-28', 'BMW', 'X3', 'Mary', 'West', 1, 52000, 46000),
+
+('CS021', 'PRD001', '2025-03-02', 'Toyota', 'Corolla', 'John', 'North', 2, 25000, 21000),
+('CS022', 'PRD002', '2025-03-05', 'BMW', 'X5', 'Sarah', 'South', 1, 65000, 57000),
+('CS023', 'PRD003', '2025-03-08', 'Mercedes', 'C-Class', 'David', 'East', 2, 48000, 42000),
+('CS024', 'PRD006', '2025-03-11', 'Honda', 'Civic', 'Mary', 'West', 1, 27000, 23000),
+('CS025', 'PRD004', '2025-03-14', 'Toyota', 'Camry', 'John', 'North', 3, 32000, 27500),
+('CS026', 'PRD005', '2025-03-17', 'BMW', '3 Series', 'Sarah', 'South', 2, 45000, 39000),
+('CS027', 'PRD007', '2025-03-20', 'Mercedes', 'GLC', 'David', 'East', 1, 58000, 51000),
+('CS028', 'PRD010', '2025-03-23', 'Honda', 'Accord', 'Mary', 'West', 2, 33000, 28500),
+('CS029', 'PRD008', '2025-03-26', 'Toyota', 'RAV4', 'John', 'North', 1, 35000, 30000),
+('CS030', 'PRD009', '2025-03-29', 'BMW', 'X3', 'Sarah', 'South', 2, 52000, 46000),
+
+('CS031', 'PRD001', '2025-04-01', 'Toyota', 'Corolla', NULL, 'North', 2, 25000, 21000),
+('CS032', 'PRD002', '2025-04-03', 'BMW', 'X5', NULL, 'South', 1, 65000, 57000),
+('CS033', 'PRD006', '2025-04-05', 'Honda', 'Civic', NULL, 'East', 2, 27000, 23000);
+GO
