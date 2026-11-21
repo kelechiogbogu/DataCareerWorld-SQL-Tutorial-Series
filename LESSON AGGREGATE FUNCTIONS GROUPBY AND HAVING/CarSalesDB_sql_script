@@ -1,1 +1,55 @@
+-- Create Database
+CREATE DATABASE [CarSalesDB];
+GO
 
+USE [CarSalesDB];
+GO
+
+-- Create Table
+CREATE TABLE CarSales (
+    SaleID INT PRIMARY KEY,
+    SaleDate DATE,
+    Brand VARCHAR(50),
+    Model VARCHAR(50),
+    Salesperson VARCHAR(50),
+    Region VARCHAR(50),
+    SalePrice DECIMAL(12, 2)
+);
+
+-- Inserting Values
+
+INSERT INTO CarSales
+(SaleID, SaleDate, Brand, Model, Salesperson, Region, SalePrice)
+VALUES
+(1, '2025-01-05', 'Toyota', 'Camry', 'John', 'North', 28000),
+(2, '2025-01-08', 'BMW', 'X5', 'Sarah', 'South', 65000),
+(3, '2025-01-10', 'Mercedes', 'C-Class', 'David', 'East', 48000),
+(4, '2025-01-12', 'Toyota', 'Corolla', 'John', 'North', 22000),
+(5, '2025-01-15', 'Honda', 'Civic', 'Mary', 'West', 25000),
+(6, '2025-01-18', 'BMW', '3 Series', 'Sarah', 'South', 45000),
+(7, '2025-01-20', 'Mercedes', 'GLC', 'David', 'East', 58000),
+(8, '2025-01-22', 'Toyota', 'RAV4', 'Peter', 'West', 32000),
+(9, '2025-01-25', 'Honda', 'Accord', 'Mary', 'West', 30000),
+(10, '2025-01-28', 'BMW', 'X3', 'Sarah', 'South', 52000),
+
+(11, '2025-02-02', 'Toyota', 'Camry', 'John', 'North', 28500),
+(12, '2025-02-05', 'Mercedes', 'E-Class', 'David', 'East', 62000),
+(13, '2025-02-08', 'Honda', 'CR-V', 'Mary', 'West', 35000),
+(14, '2025-02-11', 'BMW', '5 Series', 'Sarah', 'South', 60000),
+(15, '2025-02-14', 'Toyota', 'Corolla', 'Peter', 'West', 23000),
+(16, '2025-02-17', 'Mercedes', 'C-Class', 'David', 'East', 49000),
+(17, '2025-02-20', 'Honda', 'Civic', 'Mary', 'West', 25500),
+(18, '2025-02-23', 'BMW', 'X5', 'Sarah', 'South', 68000),
+(19, '2025-02-25', 'Toyota', 'RAV4', 'John', 'North', 33000),
+(20, '2025-02-28', 'Mercedes', 'GLC', 'David', 'East', 59000),
+
+(21, '2025-03-03', 'Honda', 'Accord', 'Mary', 'West', 31000),
+(22, '2025-03-06', 'BMW', '3 Series', 'Sarah', 'South', 46000),
+(23, '2025-03-09', 'Toyota', 'Camry', 'Peter', 'West', 29000),
+(24, '2025-03-12', 'Mercedes', 'E-Class', 'David', 'East', 64000),
+(25, '2025-03-15', 'Honda', 'CR-V', 'Mary', 'West', 36000),
+(26, '2025-03-18', 'BMW', 'X3', 'Sarah', 'South', 53000),
+(27, '2025-03-21', 'Toyota', 'Corolla', 'John', 'North', 22500),
+(28, '2025-03-24', 'Mercedes', 'C-Class', 'David', 'East', 50000),
+(29, '2025-03-27', 'Honda', 'Civic', 'Mary', 'West', 26000),
+(30, '2025-03-30', 'BMW', 'X5', 'Sarah', 'South', 67000);
